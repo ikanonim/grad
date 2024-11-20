@@ -95,13 +95,13 @@
             const name = document.getElementById("name").value;
             const message = document.getElementById("message").value;
 
-            // Replace this with your WhatsApp number (format: 62 for Indonesia, no leading 0)
+           
             const phoneNumber = "6282286323084";
 
-            // Construct the WhatsApp URL
+          
             const url = `https://wa.me/${phoneNumber}?text=Hello, gw ${encodeURIComponent(name)}. ${encodeURIComponent(message)}`;
 
-            // Redirect to WhatsApp
+           
             window.open(url, "_blank");
         }
     </script>
