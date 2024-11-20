@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kali aja ga sibuk </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3a683, #f7d794);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff4a4a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat kamu diajak! Datang wisuda🎉</h1>
+        <p>Hey there! I’m super excited to invite you to my graduation day! Let's celebrate together and make it a memorable moment, even if it’s just a short-term memory. 😄</p>
+        <p>📅 <strong>Saturday, 25th November 2024</strong><br>⏰ <strong>12:00 PM, abis zuhur keknya, mau datang pagi bisa juga</strong><br>📍 <strong>Auditorium, Universitas Andalas</strong><br>🏍️ <strong>Kalo gaada motor, naik kucing aja naik kuc juga enak🐕🐶🐕</strong></p>
+        <p>Your presence will mean a lot to me! ❤️❤️ </p>
+
+        <h2>Ucapannya tulis di sini aja!</h2>
+        <form onsubmit="sendToWhatsApp(event)">
+            <div class="form-group">
+                <label for="name">Namamu</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Pesan-pesan atau uneg2 juga boleh</label>
+                <textarea id="message" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // Prevent page reload
+            const name = document.getElementById("name").value;
+            const message = document.getElementById("message").value;
+
+            // Replace this with your WhatsApp number (format: 62 for Indonesia, no leading 0)
+            const phoneNumber = "6282286323084";
+
+            // Construct the WhatsApp URL
+            const url = `https://wa.me/${phoneNumber}?text=Hello, gw ${encodeURIComponent(name)}. ${encodeURIComponent(message)}`;
+
+            // Redirect to WhatsApp
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
