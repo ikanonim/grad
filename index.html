@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kali aja ga sibuk </title>
+    <title>Kali aja ga sibuk</title>
     <style>
         body {
             margin: 0;
@@ -12,6 +12,7 @@
             color: #333;
             text-align: center;
             padding: 20px;
+            box-sizing: border-box;
         }
         .container {
             max-width: 600px;
@@ -32,11 +33,12 @@
             margin-bottom: 20px;
         }
         .form-group {
+            display: flex;
+            flex-direction: column;
             text-align: left;
             margin-bottom: 15px;
         }
         label {
-            display: block;
             font-weight: bold;
             margin-bottom: 5px;
         }
@@ -46,6 +48,7 @@
             font-size: 1rem;
             border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
         textarea {
             resize: none;
@@ -53,7 +56,8 @@
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            width: 100%;
+            padding: 10px;
             font-size: 1rem;
             background: #ff6b6b;
             color: #fff;
@@ -65,6 +69,14 @@
         }
         .btn:hover {
             background: #ff4a4a;
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -95,13 +107,13 @@
             const name = document.getElementById("name").value;
             const message = document.getElementById("message").value;
 
-           
+            // Replace this with your WhatsApp number (format: 62 for Indonesia, no leading 0)
             const phoneNumber = "6282286323084";
 
-          
+            // Construct the WhatsApp URL
             const url = `https://wa.me/${phoneNumber}?text=Hello, gw ${encodeURIComponent(name)}. ${encodeURIComponent(message)}`;
 
-           
+            // Redirect to WhatsApp
             window.open(url, "_blank");
         }
     </script>
